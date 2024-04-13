@@ -1,4 +1,4 @@
-package com.seller;
+package src.seller;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ public class RetriveProductData {
         int nextProductId = 0;
         int currentProductId = 0;
 
-        List<String> products = com.inventory.RetriveData.readProducts();
+        List<String> products = src.inventory.RetriveData.readProducts();
         // ignore the header
         for (int i=1; i<products.size(); i++) {
             String[] productDetails = products.get(i).split(", ");

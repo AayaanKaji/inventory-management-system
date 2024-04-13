@@ -1,4 +1,4 @@
-package com.sales;
+package src.sales;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

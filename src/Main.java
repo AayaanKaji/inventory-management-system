@@ -1,11 +1,11 @@
-package com;
+package src;
 
 import java.util.Scanner;
 
-import com.inventory.*;
-import com.seller.*;
-import com.customer.*;
-import com.sales.*;
+import src.customer.*;
+import src.inventory.*;
+import src.sales.*;
+import src.seller.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -126,7 +126,7 @@ public class Main {
                 case 2:
                     System.out.println("\nEnter Customer Info");
                     System.out.print("Name: ");
-                    customerName = sc.nextLine();
+                    customerName = sc.nextLine().toLowerCase();
                     System.out.print("Initial Balance: ");
                     customerBalance = sc.nextDouble();
                     sc.nextLine();
@@ -203,7 +203,7 @@ public class Main {
 
         System.out.println("\nCustomer Profile Menu");
         System.out.print("Enter Customer Name: ");
-        customerName = sc.nextLine();
+        customerName = sc.nextLine().toLowerCase();
         if(!RetriveCustomerData.isAvailableName(customerName)) {
             System.out.println("Customer does not exist");
             return;
@@ -237,7 +237,7 @@ public class Main {
                     ViewCustomerData.printCustomerProfile(customerId);
                     break;
                 case 0:
-                    System.out.println("\nExiting Product Menu...");
+                    System.out.println("\nExiting Profile Menu...");
                     break;
                 default:
                     System.out.println("\nInvalid choice. Please enter a number from the menu.");
@@ -247,7 +247,7 @@ public class Main {
 
     private static void buyProduct(Scanner sc) {
         System.out.print("Enter Customer Name: ");
-        String customerName = sc.nextLine();
+        String customerName = sc.nextLine().toLowerCase();
         if(!RetriveCustomerData.isAvailableName(customerName)) {
             System.out.println("customer does not exist");
             System.out.println("create a profile first");
@@ -298,9 +298,12 @@ public class Main {
         System.out.println("Total Bill: " + bill);
 
         do {
-            System.out.print("Confirm Purchase(y/n): ");
+            System.out.print("Confirm Purchase[yes(y)/no(n)]: ");
             String conformation = sc.nextLine();
-            if (!conformation.equalsIgnoreCase("y")) {
+            if (conformation.equalsIgnoreCase("y") || conformation.equalsIgnoreCase("yes")) {
+                break;
+            } else if (conformation.equalsIgnoreCase("n") || conformation.equalsIgnoreCase("no")) {
+                System.out.println("Order canceled.\n");
                 break;
             }
         } while(true);

@@ -1,4 +1,4 @@
-package com.seller;
+package src.seller;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,19 +21,19 @@ public class ModifyProductData {
     }
 
     public static void removeProduct(String productID) {
-        if(!com.inventory.RetriveData.isAvailable(productID)) {
+        if(!src.inventory.RetriveData.isAvailable(productID)) {
             System.out.println("Product does not exist.");
             return;
         }
         
-        List<String> lines = com.inventory.RetriveData.readProducts();
+        List<String> lines = src.inventory.RetriveData.readProducts();
         lines.removeIf(line -> (line.split(", ")[0].equals(productID)));
         writeProducts(lines);
         System.out.println("Product removed.");
     }
 
     public static void modifyCost(String productID, double newCost) {
-        if(!com.inventory.RetriveData.isAvailable(productID)) {
+        if(!src.inventory.RetriveData.isAvailable(productID)) {
             System.out.println("Product does not exist.");
             return;
         }
@@ -43,7 +43,7 @@ public class ModifyProductData {
             return;
         }
 
-        List<String> lines = com.inventory.RetriveData.readProducts();
+        List<String> lines = src.inventory.RetriveData.readProducts();
         for(int i = 1; i < lines.size(); i++) {
             String[] products = lines.get(i).split(", ");
             if(productID.equals(products[0])) {
@@ -57,7 +57,7 @@ public class ModifyProductData {
     }
 
     public static void modifyQuantity(String productID, int newQuantity) {
-        if(!com.inventory.RetriveData.isAvailable(productID)) {
+        if(!src.inventory.RetriveData.isAvailable(productID)) {
             System.out.println("Product does not exist.");
             return;
         }
@@ -67,7 +67,7 @@ public class ModifyProductData {
             return;
         }
 
-        List<String> lines = com.inventory.RetriveData.readProducts();
+        List<String> lines = src.inventory.RetriveData.readProducts();
         for(int i = 1; i < lines.size(); i++) {
             String[] products = lines.get(i).split(", ");
             if(productID.equals(products[0])) {
@@ -81,7 +81,7 @@ public class ModifyProductData {
     }
 
     public static void addQuantity(String productID, int supply) {
-        if(!com.inventory.RetriveData.isAvailable(productID)) {
+        if(!src.inventory.RetriveData.isAvailable(productID)) {
             System.out.println("Product does not exist.");
             return;
         }
@@ -91,7 +91,7 @@ public class ModifyProductData {
             return;
         }
 
-        List<String> lines = com.inventory.RetriveData.readProducts();
+        List<String> lines = src.inventory.RetriveData.readProducts();
         for(int i = 1; i < lines.size(); i++) {
             String[] products = lines.get(i).split(", ");
             if(productID.equals(products[0])) {
@@ -107,7 +107,7 @@ public class ModifyProductData {
     }
 
     public static void removeItems(String productID, int demand) {
-        if(!com.inventory.RetriveData.isAvailable(productID)) {
+        if(!src.inventory.RetriveData.isAvailable(productID)) {
             System.out.println("Product does not exist.");
             return;
         }
@@ -117,7 +117,7 @@ public class ModifyProductData {
             return;
         }
         
-        List<String> lines = com.inventory.RetriveData.readProducts();
+        List<String> lines = src.inventory.RetriveData.readProducts();
         for(int i = 1; i < lines.size(); i++) {
             String[] products = lines.get(i).split(", ");
             if(productID.equals(products[0])) {

@@ -1,17 +1,17 @@
-package com.seller;
+package src.seller;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import com.inventory.*;
+import src.inventory.*;
 
 public class UploadProductData {
     private static final String filePath = "./database/inventory.csv";
 
     public static void addProduct(String productName, double cost, int quantity) {
         String productId = RetriveData.getProductId(productName);
-        if(productId == null && com.inventory.RetriveData.isAvailable(productId)) {
+        if(productId == null && src.inventory.RetriveData.isAvailable(productId)) {
             System.out.println("Product already exists. Choose a different name");
             return;
         }

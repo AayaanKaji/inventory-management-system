@@ -1,4 +1,4 @@
-package com.customer;
+package src.customer;
 
 public class Login {
     private String customerId;

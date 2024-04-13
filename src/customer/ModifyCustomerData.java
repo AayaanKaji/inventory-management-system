@@ -1,4 +1,4 @@
-package com.customer;
+package src.customer;
 
 import java.io.FileWriter;
 import java.io.IOException;
