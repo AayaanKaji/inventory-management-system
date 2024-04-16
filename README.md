@@ -7,8 +7,8 @@ This project is an inventory management system implemented in Java. It allows se
 ## Features
 
 - Separate menus for sellers and customers.
-- Sellers can view/add/remove/modify products, view purchase history, and view customer information.
-- Customers can create profiles, view product lists, and purchase products.
+- Sellers can view/add/remove/modify products, view purchase history, and view customer information also view purchase history.
+- Customers can create profiles, deposite balance to purchase products, view product lists amd purchase history.
 - Database stored in CSV files.
 - Interactive command-line interface.
 
@@ -38,5 +38,3 @@ This project is an inventory management system implemented in Java. It allows se
 
 - **Java Development Kit (JDK)**: JDK version 8 or higher must be installed on your system.
 - **Bash Shell**: The system utilizes bash scripts for database management, so ensure a bash shell is available.
-
-Feel free to reach out if you encounter any issues or require further assistance.
