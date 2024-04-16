@@ -7,7 +7,6 @@ public class ViewCustomerData {
         List<String> lines = RetriveCustomerData.readCustomerInfo();
         for (String line : lines) {
             String[] customer = line.split(", ");
-            System.out.println("customer_id\t" + "customer_name\t" + "balance\t" + "number_of_successful_purchases\t" + "number_of_failed_purchases\t" + "total_spending");
             System.out.println(customer[0] + "\t" + customer[1] + "\t" + 
                                customer[2] + "\t" + customer[3] + "\t" +
                                customer[4] + "\t" + customer[5]);

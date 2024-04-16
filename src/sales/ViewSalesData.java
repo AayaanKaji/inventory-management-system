@@ -9,7 +9,6 @@ public class ViewSalesData {
         for (String line : lines) {
             count++;
             String[] purchase = line.split(", ");
-            System.out.println("customer_id\t" + "product_id\t" + "purchase_status\t" + "purchase_quantity\t" + "purchase_cost\t" + "date_and_time");
             System.out.println(purchase[0] + "\t" + purchase[1] + "\t" + 
                                purchase[2] + "\t" + purchase[3] + "\t" +
                                purchase[4] + "\t" + purchase[5]);
@@ -20,11 +19,11 @@ public class ViewSalesData {
     public static void printCustomerPurchase(String customerId) {
         List<String> lines = RetriveSalesData.readSalesInfo();
         int count = 0;
+        System.out.println("customer_id\t" + "product_id\t" + "purchase_status\t" + "purchase_quantity\t" + "purchase_cost\t" + "date_and_time");
         for (String line : lines) {
             String[] purchase = line.split(", ");
             if(customerId.equals(purchase[0])) {
                 count++;
-                System.out.println("customer_id\t" + "product_id\t" + "purchase_status\t" + "purchase_quantity\t" + "purchase_cost\t" + "date_and_time");
                 System.out.println(purchase[0] + "\t" + purchase[1] + "\t" + 
                                    purchase[2] + "\t" + purchase[3] + "\t" +
                                    purchase[4] + "\t" + purchase[5]);
@@ -36,11 +35,11 @@ public class ViewSalesData {
     public static void printProductPurchase(String productId) {
         List<String> lines = RetriveSalesData.readSalesInfo();
         int count = 0;
+        System.out.println("customer_id\t" + "product_id\t" + "purchase_status\t" + "purchase_quantity\t" + "purchase_cost\t" + "date_and_time");
         for (String line : lines) {
             String[] purchase = line.split(", ");
             if(productId.equals(purchase[1])) {
                 count++;
-                System.out.println("customer_id\t" + "product_id\t" + "purchase_status\t" + "purchase_quantity\t" + "purchase_cost\t" + "date_and_time");
                 System.out.println(purchase[0] + "\t" + purchase[1] + "\t" + 
                                    purchase[2] + "\t" + purchase[3] + "\t" +
                                    purchase[4] + "\t" + purchase[5]);
