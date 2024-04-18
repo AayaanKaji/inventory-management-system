@@ -4,6 +4,8 @@
 
 This project is an inventory management system implemented in Java. It allows sellers to manage their products, customers to browse and purchase products, and tracks sales and customer information.
 
+[Run on Replit](https://replit.com/@rookiepriderepl/inventory-management-system)
+
 ## Features
 
 - Separate menus for sellers and customers.
